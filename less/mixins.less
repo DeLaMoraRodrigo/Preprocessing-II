@@ -1,1 +1,37 @@
 // Mixins in here
+.globalBtn(){
+    background-color: @button-bg;
+    color: @white;
+    text-align: center;
+    padding: 1.5vh 0;
+    width: 80%;
+    font-size: 2rem;
+    border-radius: 20px;
+
+    .keyframes(@name; @function){
+        @-webkit-keyframes @name {
+            @function();
+        }
+    
+        @-moz-keyframes @name {
+            @function();
+        }
+    
+        @keyframes @name {
+            @function();
+        }
+    }
+    
+    .animation(@function){
+        -webkit-animation: @function;
+        -moz-animation: @function;
+        animation: @function;
+    }
+
+    @media @mobile {
+        width: 100%;
+        padding: 1.5vh 0;
+        margin-bottom: 3vh;
+    }
+}
+
